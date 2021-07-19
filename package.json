@@ -1,0 +1,21 @@
+{
+  "name": "2021_nodejs_wetude",
+  "version": "1.0.0",
+  "description": "the best to watch video",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dayjang/2021_nodejs_wetude.git"
+  },
+  "scripts": {
+    "win": "node index.js"
+  },
+  "author": "Da Y",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dayjang/2021_nodejs_wetude/issues"
+  },
+  "homepage": "https://github.com/dayjang/2021_nodejs_wetude#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

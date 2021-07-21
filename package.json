@@ -7,7 +7,7 @@
     "url": "git+https://github.com/dayjang/2021_nodejs_wetude.git"
   },
   "scripts": {
-    "dev": "nodemon --exec babel-node index.js"
+    "dev": "nodemon --exec babel-node src/server.js"
   },
   "author": "Da Y",
   "license": "MIT",

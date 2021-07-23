@@ -1,18 +1,31 @@
 import express from "express";
 const PORT = 4000;            
 const app = express();  
-const gossipMiddleware = (req,res,next) => {
-    console.log(`I'm in the middle! Someone is going to: ${req.url}`);
-    next(); // this gossipMid function call next(), and gossipnMid function become a middleware!!
+
+const logger = (req,res,next) => {
+    console.log(`gossipMid: ${req.method} ${req.url}`);
+    next(); 
 }
 const handleHome = (req,res) => {
-    return res.send("handle home is executed!");
+    return res.send("handle home is executed! I LUV MIDDLEWARE");
 };
-// we have two handlers and one of them is middleware
-// middleware == handler -- controller... has one more argument 'next'
-// app.get("/",()=>console.log("sb is trying to go home")); // we are receiving a request. but not responding haha
 
-app.get("/",gossipMiddleware,handleHome);
+const privateMiddleware = (req,res,next) => {
+    const url = req.url;
+    if (url ==="/protected") {
+        return res.send("<h1>Not Allowed</h1>")
+    }
+    console.log("Allowed, You may continue....")
+    next();
+}
 
+// handleProtected is a last fuction, so NO NEED NEXT
+const handleProtected = (req,res) => {
+    return res.send("Welcome to the private lounge.");
+}
+app.use(logger);
+app.use(privateMiddleware);
+app.get("/",handleHome);
+app.get("/protected",handleProtected);
 const handleListening = () => console.log(`server listeing thru http://localhost:${PORT}`);
 app.listen(4000, handleListening); // open server to outside of the world. 

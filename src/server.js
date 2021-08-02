@@ -1,11 +1,13 @@
 import express from "express";
+import morgan from "morgan";
+
 const PORT = 4000;            
 const app = express();  
 
-const logger = (req,res,next) => {
-    console.log(`gossipMid: ${req.method} ${req.url}`);
-    next(); 
-}
+const logger = morgan("short");//morgan("dev");
+
+
+
 const handleHome = (req,res) => {
     return res.send("handle home is executed! I LUV MIDDLEWARE");
 };
@@ -46,3 +48,6 @@ app.listen(4000, handleListening); // open server to outside of the world.
  // BEAUTIFUL TWO CODE LINES BELOW :-)
  // const home = (req,res) => res.sent("hello");
  // app.get("/", home) ; 
+
+
+ // app.use(A,B) 가 app.get(router,C) 위에 있으면, A,B가 middleware 처럼 밑에 router 에 적용됨!! A-B-C 

@@ -17,7 +17,7 @@ const privateMiddleware = (req,res,next) => {
     }
     console.log("Allowed, You may continue....")
     next();
-}
+} 
 
 // handleProtected is a last fuction, so NO NEED NEXT
 const handleProtected = (req,res) => {
@@ -25,7 +25,24 @@ const handleProtected = (req,res) => {
 }
 app.use(logger);
 app.use(privateMiddleware);
-app.get("/",handleHome);
+app.get("/",handleHome); 
 app.get("/protected",handleProtected);
+
 const handleListening = () => console.log(`server listeing thru http://localhost:${PORT}`);
 app.listen(4000, handleListening); // open server to outside of the world. 
+
+
+// => arrow function은 return을 포함한다
+// 그래서 const handleHome = (req, res) => res.end() 충분
+// const handleHome = (req, res) => {
+// return res.end()
+// }
+// 이것과 동일함
+
+ // app.get(router,controller 펑션을 사용)
+// console.log("hi") this is not a function, it is a statement
+// () => console.log("hi") this is a function! 
+ // two argument needs- reqest, and response
+ // BEAUTIFUL TWO CODE LINES BELOW :-)
+ // const home = (req,res) => res.sent("hello");
+ // app.get("/", home) ; 

@@ -11,12 +11,14 @@ videos | user
 
 # USER ROUTER
 /users/edit            not good =>     /edit-profile
-/users/delete                          /delte-profile
+/users/delete                          /delete-profile
 
 # VIDEAO ROUTER
-/videos/watch                          /watch-videos        
-/videos/edit                           /edit-videos
-/videos/delete                         /delete-videos
+/videos/:id                            /watch videos    
+
+/videos/:id/edit                           /edit videos
+/videos/:id/delete                         /delete videos
+/videos/upload                           /upload videos
 /videos/comments
 /videos/comments/delete 
 

@@ -3,7 +3,7 @@ TWO BIG Domains of our project:
 videos | user
 
 
-# GLOBAL ROUTER
+# GLOBAL ROUTER (just for simple, pretty domains)
 /          -> Home, homepage
 /join       -> uers/join
 /login      -> uers/login? this make more sense? .. these are exception 

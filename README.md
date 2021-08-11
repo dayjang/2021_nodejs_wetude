@@ -10,6 +10,8 @@ videos | user
 /search     -> videos/search
 
 # USER ROUTER
+/users/:id                            -> see users
+/users/logout
 /users/edit            not good =>     /edit-profile
 /users/delete                          /delete-profile
 

@@ -1,12 +1,32 @@
-// export const trending = (req,res) => res.send(`<!DOCTYPE html><html lang="en"><head><title>WETUBE!</title></head><body><h1>HOME Trending..</h1></body><footer>ha</footer></html>`);
-const fakeUser = {
-    username: "Diane",
-    loggedIn: true
-    
-};
-
-const videos = [1,2,3,4,5,6,7];
-export const trending = (req,res)=> res.render("home", { pageTitle: "Home" , potato: "Tomato", fakeUser: fakeUser, videos});
+export const trending = (req, res) => {
+    const videos = [
+      {
+        title: "First Video",
+        rating: 5,
+        comments: 2,
+        createdAt: "2 minutes ago",
+        views: 59,
+        id: 1,
+      },
+      {
+        title: "Second Video",
+        rating: 5,
+        comments: 2,
+        createdAt: "2 minutes ago",
+        views: 59,
+        id: 1,
+      },
+      {
+        title: "Third Video",
+        rating: 5,
+        comments: 2,
+        createdAt: "2 minutes ago",
+        views: 59,
+        id: 1,
+      },
+    ];
+    return res.render("home", { pageTitle: "Home", videos });
+  };
 export const see = (req,res) => res.render("watch");
 export const edit = (req,res) => res.render("edit");
 

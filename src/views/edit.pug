@@ -3,6 +3,6 @@ extends base.pug
 
 block content
     h4 EDIT video vdieo 
-    form (action="")
-        input(placeholder="video title")
+    form(method="POST")
+        input(placeholder="video title", value=video.title)
         input(value="Save", type="submit")

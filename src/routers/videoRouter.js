@@ -2,6 +2,8 @@ import express from "express";
 import { see, edit, upload, deleteVid } from "../controllers/videoController";
 
 
+
+
 const videoRouter = express.Router();
 
 videoRouter.get("/upload", upload);
